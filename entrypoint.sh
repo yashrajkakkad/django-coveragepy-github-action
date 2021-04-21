@@ -35,7 +35,7 @@ export DATABASE_URL='postgresql://ctest:coveragetest123@127.0.0.1:5432/demo'
 
 # This will automatically fail (set -e is set by default) if the tests fail, which is OK.
 # coverage run --source "${APP_LOCATION}" manage.py test "${APP}"
-coverage run "${APP}/"manage.py test                                                                                       
+coverage run "${APP}/"manage.py test --pattern="tests_*.py"                                                                            
 
 # Now get the coverage
 COVERAGE_RESULT=`coverage report | grep TOTAL | awk 'N=1 {print $NF}' | sed 's/%//g'`
