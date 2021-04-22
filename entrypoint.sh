@@ -37,7 +37,8 @@ export DATABASE_URL='postgresql://ctest:coveragetest123@127.0.0.1:5432/demo'
 # coverage run --source "${APP_LOCATION}" manage.py test "${APP}"
 # (cd "${APP}"; coverage run manage.py test --pattern="tests_*.py")                                                                            
 # coverage run --source="$APP" manage.py test --pattern="tests_*.py"                                                                            
-(cd api; coverage run manage.py test)
+# (cd api; coverage run manage.py test)
+coverage run api/manage.py test api/
 
 # Now get the coverage
 COVERAGE_RESULT=`coverage report | grep TOTAL | awk 'N=1 {print $NF}' | sed 's/%//g'`
