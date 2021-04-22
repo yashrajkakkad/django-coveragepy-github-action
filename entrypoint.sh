@@ -31,7 +31,7 @@ source "${GITHUB_WORKSPACE}/${VENV_NAME}/bin/activate"
 pip install -r requirements.txt
 
 echo "Base setup complete. Setting up a sample DB url and running..."
-export DATABASE_URL='postgresql://postgres:postgres@127.0.0.1:5432/github-actions'
+export DATABASE_URL='postgresql://ctest:coveragetest123@127.0.0.1:5432/demo'
 export GITHUB_WORKFLOW=1
 
 # This will automatically fail (set -e is set by default) if the tests fail, which is OK.
